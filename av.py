@@ -52,9 +52,8 @@ def compute_daily_counts(clean_df: pd.DataFrame) -> pd.DataFrame:
         if open_d in diff.index:
             diff.at[open_d, note] += 1
 
-        next_day = close_d + pd.Timedelta(days=1)
-        if next_day <= end_date and next_day in diff.index:
-            diff.at[next_day, note] -= 1
+        if close_d in diff.index:
+        diff.at[close_d, note] -= 1
 
     # Cumulative sum over dates to get active counts
     daily_counts = diff.cumsum()
