@@ -125,7 +125,7 @@ if daily_counts.empty:
     st.stop()
 
 # Granularity: daily vs monthly snapshots
-granularity = st.sidebar.selectbox("Time granularity", ["Daily", "Monthly snapshots"])
+granularity = st.sidebar.selectbox("Time granularity", ["Daily"])
 
 if granularity == "Daily":
     plot_data = daily_counts
