@@ -53,7 +53,7 @@ def compute_daily_counts(clean_df: pd.DataFrame) -> pd.DataFrame:
             diff.at[open_d, note] += 1
 
         if close_d in diff.index:
-        diff.at[close_d, note] -= 1
+            diff.at[close_d, note] -= 1
 
     # Cumulative sum over dates to get active counts
     daily_counts = diff.cumsum()
